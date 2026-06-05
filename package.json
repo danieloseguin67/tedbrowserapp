@@ -8,7 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng deploy --base-href=/tedbrowserapp/"
+    "deploy": "ng deploy --base-href=/"
   },
   "dependencies": {
     "@angular/animations": "^19.0.0",
