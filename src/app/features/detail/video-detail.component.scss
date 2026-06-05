@@ -1,0 +1,132 @@
+.back-link {
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.detail-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+
+  img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    display: block;
+    background: #eaf1f8;
+  }
+}
+
+.embed-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  cursor: pointer;
+
+  iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .yt-poster {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .yt-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 68px;
+    height: 48px;
+    opacity: 0.9;
+    transition: opacity 0.15s, transform 0.15s;
+
+    &:hover {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.detail-content {
+  padding: 1.2rem;
+
+  .category {
+    margin: 0;
+    font-size: 0.75rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--brand);
+    font-weight: 700;
+  }
+
+  h1 {
+    margin: 0.45rem 0 1rem;
+    line-height: 1.2;
+    font-size: clamp(1.3rem, 2.5vw, 2.2rem);
+  }
+
+  .meta {
+    margin: 0.35rem 0;
+    color: var(--muted);
+  }
+
+  .description {
+    margin-top: 1rem;
+    line-height: 1.7;
+  }
+}
+
+.watch-link {
+  margin-top: 1.2rem;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  color: #fff;
+  background: var(--brand);
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+
+  &--yt {
+    background: #ff0000;
+    margin-right: 0.6rem;
+  }
+}
+
+.action-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.2rem;
+
+  .watch-link {
+    margin-top: 0;
+  }
+}
+
+.missing {
+  padding: 1rem;
+}

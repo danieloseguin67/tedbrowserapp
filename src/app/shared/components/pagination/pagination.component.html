@@ -1,0 +1,18 @@
+<nav class="pagination" aria-label="Search results pages">
+  <button type="button" (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 1">
+    Previous
+  </button>
+
+  <button
+    type="button"
+    class="page-btn"
+    *ngFor="let page of pages()"
+    [class.active]="page === currentPage"
+    (click)="goToPage(page)">
+    {{ page }}
+  </button>
+
+  <button type="button" (click)="goToPage(currentPage + 1)" [disabled]="currentPage === totalPages">
+    Next
+  </button>
+</nav>

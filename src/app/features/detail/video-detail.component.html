@@ -1,0 +1,60 @@
+<a routerLink="/" class="back-link">Back to Search</a>
+
+<article class="detail-card" *ngIf="video; else noVideo">
+  <div class="embed-wrap" *ngIf="video.youtubeId; else tedEmbed">
+    <ng-container *ngIf="playerActive; else poster">
+      <iframe
+        [src]="embedUrl"
+        allowfullscreen
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
+        title="{{ video.title }}"></iframe>
+    </ng-container>
+    <ng-template #poster>
+      <img [src]="posterUrl" [alt]="video.title" class="yt-poster" (error)="onImgError($event)" />
+      <button class="yt-play-btn" (click)="activatePlayer()" [attr.aria-label]="'Play ' + video.title">
+        <svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg">
+          <path d="M66.5 7.8a8.5 8.5 0 0 0-6-6C55.8 0 34 0 34 0S12.2 0 7.5 1.8a8.5 8.5 0 0 0-6 6C0 12.5 0 24 0 24s0 11.5 1.5 16.2a8.5 8.5 0 0 0 6 6C12.2 48 34 48 34 48s21.8 0 26.5-1.8a8.5 8.5 0 0 0 6-6C68 35.5 68 24 68 24s0-11.5-1.5-16.2z" fill="#ff0000"/>
+          <path d="M27 34l18-10-18-10v20z" fill="#fff"/>
+        </svg>
+      </button>
+    </ng-template>
+  </div>
+
+  <ng-template #tedEmbed>
+    <div class="embed-wrap">
+      <iframe
+        [src]="embedUrl"
+        allowfullscreen
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
+        title="{{ video.title }}"></iframe>
+    </div>
+  </ng-template>
+
+
+
+  <div class="detail-content">
+    <p class="category">{{ video.category }}</p>
+    <h1>{{ video.title }}</h1>
+
+    <p class="meta">
+      <strong>Speaker:</strong> {{ video.speaker }}
+    </p>
+    <p class="meta" *ngIf="video.publishedDate">
+      <strong>Published:</strong> {{ video.publishedDate | date: 'longDate' }}
+    </p>
+
+    <p class="description" *ngIf="video.description">{{ video.description }}</p>
+
+    <div class="action-links">
+      <a *ngIf="video.youtubeId" [href]="'https://www.youtube.com/watch?v=' + video.youtubeId" target="_blank" rel="noopener" class="watch-link watch-link--yt">Watch on YouTube</a>
+      <a [href]="video.link" target="_blank" rel="noopener" class="watch-link">Open on TED.com</a>
+    </div>
+  </div>
+</article>
+
+<ng-template #noVideo>
+  <section class="detail-card missing">
+    <h1>Video not available</h1>
+    <p>This session has expired. Return to search and open the talk again.</p>
+  </section>
+</ng-template>

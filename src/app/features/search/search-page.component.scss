@@ -1,0 +1,154 @@
+.hero {
+  padding: 1.3rem 0 1.1rem;
+
+  h1 {
+    margin: 0;
+    font-size: clamp(1.6rem, 2.8vw, 2.7rem);
+    line-height: 1.15;
+  }
+
+  p {
+    margin: 0.65rem 0 0;
+    color: var(--muted);
+    max-width: 67ch;
+  }
+}
+
+.search-card {
+  margin-top: 1rem;
+  background: var(--bg-1);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1rem;
+  box-shadow: var(--card-shadow);
+}
+
+.search-form {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: 2fr 1fr auto;
+
+  label {
+    display: grid;
+    gap: 0.45rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  span {
+    font-size: 0.85rem;
+  }
+
+  input,
+  select {
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    font-size: 1rem;
+    padding: 0.75rem 0.8rem;
+    width: 100%;
+    background: #fff;
+  }
+
+  button {
+    border: 0;
+    border-radius: 12px;
+    background: linear-gradient(120deg, #ff685f 0%, var(--brand) 100%);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.75rem 1.2rem;
+    cursor: pointer;
+    align-self: end;
+  }
+}
+
+.results-header {
+  margin: 1.1rem 0;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.error-banner {
+  border: 1px solid #f5b4b0;
+  background: #fff5f5;
+  color: #8f1f18;
+  border-radius: 12px;
+  padding: 0.85rem;
+}
+
+.results-grid {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+.result-card {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--card-shadow);
+  display: grid;
+
+  img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background: #ebf0f7;
+  }
+}
+
+.result-content {
+  padding: 0.85rem;
+
+  .category {
+    margin: 0;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--brand);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-size: 1.02rem;
+    margin: 0.4rem 0;
+    line-height: 1.35;
+  }
+
+  .speaker {
+    margin: 0;
+    color: var(--muted);
+    font-weight: 600;
+  }
+}
+
+.details-link {
+  margin-top: 0.7rem;
+  display: inline-block;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.empty-state {
+  border: 1px dashed var(--line);
+  border-radius: 14px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.65);
+
+  h2 {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+
+  p {
+    margin: 0.4rem 0 0;
+    color: var(--muted);
+  }
+}
+
+@media (max-width: 860px) {
+  .search-form {
+    grid-template-columns: 1fr;
+  }
+}

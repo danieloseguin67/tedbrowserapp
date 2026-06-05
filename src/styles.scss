@@ -1,0 +1,41 @@
+:root {
+  --bg-0: #f2f6fb;
+  --bg-1: #ffffff;
+  --ink: #162235;
+  --muted: #5c6f88;
+  --brand: #e62b1e;
+  --brand-soft: #ffd8d5;
+  --line: #d5e0ee;
+  --card-shadow: 0 20px 35px rgba(8, 33, 66, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 15% 20%, #fff8eb 0, transparent 34%),
+    radial-gradient(circle at 80% 4%, #d8f1ff 0, transparent 32%),
+    linear-gradient(180deg, #f7fbff 0%, #ecf3fb 100%);
+}
+
+a {
+  color: inherit;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
