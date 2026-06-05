@@ -96,6 +96,13 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "/tedbrowserapp/",
+            "dir": "dist/ted-browser-app/browser"
+          }
         }
       }
     }
